@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de IMC</title>
+  <script type="text/javascript">
+    // Função para calcular o IMC
+    function calcularIMC(peso, altura) {
+      var imc = peso / (altura * altura);
+      return imc.toFixed(2); // Limitando o número de casas decimais para duas
+    }
+
+    // Função para exibir o alerta com o valor do IMC
+    function mostrarAlertaIMC(imc) {
+      alert("Seu IMC é: " + imc);
+    }
+
+    function calcularEExibirIMC() {
+      // Solicitar peso e altura ao usuário
+      var peso = parseFloat(document.getElementById("peso").value);
+      var altura = parseFloat(document.getElementById("altura").value);
+
+      // Calcular o IMC
+      var resultadoIMC = calcularIMC(peso, altura);
+
+      // Exibir o alerta com o valor do IMC
+      mostrarAlertaIMC(resultadoIMC);
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora de IMC</h1>
+
+  <label for="peso">Peso (kg):</label>
+  <input type="number" id="peso" />
+
+  <label for="altura">Altura (metros):</label>
+  <input type="number" id="altura" />
+
+  <button onclick="calcularEExibirIMC()">Calcular IMC</button>
+</body>
+</html>
